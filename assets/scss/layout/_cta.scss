@@ -1,0 +1,107 @@
+@use '../utils' as *;
+
+/*=============================
+    07. cta
+===============================*/
+
+.td-cta{
+    &-2{
+        &-title{
+            & h2{
+                font-size: 96px;
+                color: #ebebeb;
+                @media #{$lg} {
+                    font-size: 55px;
+                }
+                @media #{$md,$sm,$xs} {
+                    font-size: 45px;
+                }
+                @media #{$xs} {
+                    font-size: 40px;
+                }
+            }
+        }
+        &-spacing{
+            padding-top: 80px;
+            padding-bottom: 60px;
+        }
+    }
+    &-3{
+        &-content{
+            & h2{
+                font-size: 52px;
+                line-height: 119%;
+                text-transform: capitalize;
+                @media #{$lg,$md,$sm,$xs} {
+                    font-size: 40px;
+                }
+                @media #{$xs} {
+                    & br{
+                        display: none;
+                    }
+                }
+            }
+            & p{
+                line-height: 162%;
+                text-transform: capitalize;
+            }
+        }
+        &-contact{
+            & .td-header-call-number a {
+                font-weight: 700;
+                font-size: 24px;
+            }
+            & .td-header-call-icon {
+                background: var(--td-theme-primary);
+                color: var(--td-common-white);
+            }
+        }
+        &-form{
+            & input{
+                font-family: var(--td-ff-p);
+                font-weight: 400;
+                font-size: 16px;
+                text-transform: capitalize;
+                color: var(--td-common-black);
+                border: none;
+                border-bottom: 1px solid #d6d6d6;
+                padding: 0;
+                padding-right: 70px;
+                &::placeholder{
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    color: var(--td-grey-1);
+                }
+            }
+            & button{
+                width: 50px;
+                height: 50px;
+                border: 1px solid #d6d6d6;
+                text-align: center;
+                line-height: 50px;
+                border-radius: 50%;
+                color: var(--td-theme-primary);
+                transition: all .4s ease;
+                position: absolute;
+                bottom: 10px;
+                right: 0;
+                &:hover{
+                    background: var(--td-theme-primary);
+                    color: var(--td-common-white);
+                    border-color: var(--td-theme-primary);
+                }
+            }
+        }
+        &-bg{
+            box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.05);
+            padding: 90px 80px 70px 80px;
+            margin-top: -120px;
+            position: relative;
+            z-index: 1;
+            @media #{$lg,$md,$sm,$xs} {
+                padding: 50px 30px 30px 30px;
+            }
+        }
+    }
+}

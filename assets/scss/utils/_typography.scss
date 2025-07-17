@@ -1,0 +1,17 @@
+
+
+
+// font url
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Yantramanav:wght@100;300;400;500;700;900&display=swap';
+
+
+// font family
+$font-family: (
+    'ff': (
+        'body': '"Yantramanav", sans-serif',
+        'heading': '"Yantramanav", sans-serif',
+        'p': '"Manrope", sans-serif',
+        'fontawesome': '"Font Awesome 6 Pro"',
+    )
+);

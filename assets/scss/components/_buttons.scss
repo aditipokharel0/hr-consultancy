@@ -1,0 +1,130 @@
+@use '../utils' as *;
+
+/*=============================
+	04. Button
+===============================*/
+.td-btn{
+	padding: 16px 26px;
+	background: var(--td-theme-primary);
+	display: inline-block;
+	font-size: 18px;
+	letter-spacing: 0px;
+	line-height: 20px;
+	color: var(--td-common-white);
+	font-family: var(--td-ff-body);
+	font-weight: 700;
+	position: relative;
+	transition: all .3s linear;
+	overflow: hidden;
+	z-index: 1;
+	line-height: 1;
+	& span{
+		border: 1px solid #fff;
+		width: 16px;
+		height: 1px;
+		display: inline-block;
+		transform: translatey(-4px);
+		margin-right: 10px;
+		transition: all .4s ease;
+	}
+	&::after {
+		position: absolute;
+		content: "";
+		background-color: var(--td-common-black);
+		width: 100%;
+		height: 0%;
+		left: 50%;
+		top: 50%;
+		border-radius: 0px;
+		transform: translate(-50%, -50%) rotate(-45deg);
+		z-index: -1;
+		transition: all 500ms ease;
+	}
+	&:hover{
+		color: var(--td-common-white);
+		&:after{
+			height: 380%;
+		}
+		&-white{
+			&:after{
+				background: var(--td-common-white);
+			}
+			&:hover{
+				color: var(--td-common-black);
+			}
+		}
+	}
+	&-white-2{
+		background: var(--td-theme-primary);
+		&:after{
+			background: var(--td-common-white);
+		}
+		&:hover{
+			color: var(--td-common-black);
+			background: var(--td-common-white);
+			& span{
+				border-color: var(--td-common-black);
+			}
+		}
+	}
+	&-white-3{
+		background: var(--td-common-white);
+		color: var(--td-common-black);
+		& span{
+			border-color: var(--td-common-black);
+		}
+		&:after{
+			background: var(--td-common-black);
+		}
+		&:hover{
+			color: var(--td-common-white);
+			background: var(--td-common-black);
+			& span{
+				border-color: var(--td-common-white);
+			}
+		}
+	}
+	&-black{
+		background: var(--td-common-black);
+		color: var(--td-common-white);
+		& span{
+			border-color: var(--td-common-white);
+		}
+		&:after{
+			background: var(--td-theme-primary);
+		}
+	}
+	&-border{
+		&-white{
+			padding: 16px 26px;
+			border: 1px solid var(--td-common-white);
+			display: inline-block;
+			font-size: 18px;
+			letter-spacing: 0px;
+			color: var(--td-common-white);
+			font-family: var(--td-ff-body);
+			font-weight: 700;
+			position: relative;
+			transition: all 0.3s linear;
+			line-height: 1;
+			&:hover{
+				background: var(--td-common-white);
+				color: var(--td-common-black);
+			}
+		}
+	}
+	&-solid{
+		padding: 16px 26px;
+		background: var(--td-theme-primary);
+		color: var(--td-common-white);
+		display: block;
+		text-align: center;
+		font-size: 18px;
+		font-family: var(--td-ff-body);
+		font-weight: 700;
+		&:hover{
+			background: var(--td-common-black);
+			color: var(--td-common-white);
+		}
+	}
+}

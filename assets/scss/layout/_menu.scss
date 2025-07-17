@@ -1,0 +1,153 @@
+@use '../utils' as *;
+
+/*=============================
+    13. Menu
+===============================*/
+
+
+.tdmenu {
+    &__navbar-wrap {
+        @media #{$x3l,$xxl,$xl,$lg,$md,$sm,$xs} {
+            margin-left: 0;
+        }
+        & > ul {
+            & > li {
+                display: inline-block;
+                position: relative;
+                list-style: none;
+                &.active,
+                &:hover {
+                    & > a {
+                        color: var(--td-theme-primary)!important;
+                    }
+                }
+                &:not(:last-child){
+                    margin-right: 50px;
+                    @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+                        margin-right: 25px;
+                    }
+                }
+                & > a {
+                    font-weight: 500;
+                    font-size: 18px;
+                    display: inline-block;
+                    color: var(--td-common-black-2);
+                    padding: 37px 0px;
+                }
+                & .sub-menu {
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    min-width: 230px;
+                    background: var(--td-common-white);
+                    margin: 0;
+                    -webkit-transform: scale(1, 0);
+                    -moz-transform: scale(1, 0);
+                    -ms-transform: scale(1, 0);
+                    -o-transform: scale(1, 0);
+                    transform: scale(1, 0);
+                    transform-origin: 0 0;
+                    -webkit-transition: all 0.3s ease-out 0s;
+                    -moz-transition: all 0.3s ease-out 0s;
+                    -ms-transition: all 0.3s ease-out 0s;
+                    -o-transition: all 0.3s ease-out 0s;
+                    transition: all 0.3s ease-out 0s;
+                    -webkit-box-shadow: 0px 30px 70px 0px rgba(137, 139, 142, 0.15);
+                    -moz-box-shadow: 0px 30px 70px 0px rgba(137, 139, 142, 0.15);
+                    box-shadow: 0px 30px 70px 0px rgba(137, 139, 142, 0.15);
+                    border-radius: 0;
+                    padding: 18px 0;
+                    display: block;
+                    visibility: hidden;
+                    opacity: 0;
+                    z-index: 9;
+                    &.sub-menu-right {
+                        right: 0;
+                        left: auto;
+                    }
+                    & .sub-menu {
+                        right: auto;
+                        left: 100%;
+                        top: 0;
+                    }
+                    & li {
+                        margin-left: 0;
+                        text-align: left;
+                        display: block;
+                        & a {
+                            padding: 6px 15px 6px 25px;
+                            font-weight: 500;
+                            font-size: 18px;
+                            display: block;
+                            color: var(--td-common-black-2);
+                            margin: 0;
+                        }
+                        &:hover > a,
+                        &.active > a {
+                            color: var(--td-theme-primary);
+                        }
+                    }
+                }
+                &:hover > .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: scale(1);
+                }
+            }
+        }
+        &-2{
+            & > ul {
+                & > li {
+                    &:not(:last-child){
+                        @media #{$xl} {
+                            margin-right: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        &-3{
+            & > ul {
+                & > li {
+                    & a{
+                        color: var(--td-common-white);
+                    }
+                    &:not(:last-child){
+                        @media #{$xl} {
+                            margin-right: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-offcanvas{
+        &-open{
+            &-bar{
+                cursor: pointer;
+                &:hover{
+                    & span{
+                        background: var(--td-theme-primary);
+                        &:nth-child(2){
+                            transform: translateX(0);
+                        }
+                    }
+                }
+                & span{
+                    height: 2px;
+                    width: 20px;
+                    background-color: var(--td-common-black);
+                    display: block;
+                    border-radius: 6px;
+                    transition: all .4s ease;
+                    &:not(:last-child){
+                        margin-bottom: 6px;
+                    }
+                    &:nth-child(2){
+                        transform: translateX(6px);
+                    }
+                }
+            }
+        }
+    }
+}

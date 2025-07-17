@@ -1,0 +1,76 @@
+@use '../utils' as *;
+
+/*=============================
+    04. chose
+===============================*/
+.td-chose{
+    &-2{
+        &-item{
+            padding: 30px 20px 5px 30px;
+            &.item-1{
+                background: var(--td-theme-primary);
+            }
+            &.item-2{
+                background: #fafafa;
+            }
+            &.item-3{
+                background: var(--td-common-black);
+            }
+        }
+        &-title{
+            font-size: 24px;
+            text-transform: capitalize;
+        }
+        &-para{
+            line-height: 162%;
+            color: #6f6f6f;
+        }
+        &-right{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 49%;
+            padding-top: 208px;
+            padding-bottom: 208px;
+            text-align: center;
+            @media #{$lg,$md,$sm,$xs} {
+                position: inherit;
+                width: 100%;
+            }
+            @media #{$md,$sm,$xs} {
+                padding-top: 108px;
+                padding-bottom: 108px;
+            }
+            @media #{$xs} {
+                padding-top: 108px;
+                padding-bottom: 108px;  
+            }
+        }
+        &-play{
+            text-align: center;
+            line-height: 132px;
+            width: 132px;
+            height: 132px;
+            background: var(--td-common-black);
+            display: inline-block;
+            border-radius: 50%;
+            & svg{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+        &-shape{
+            position: absolute;
+            top: -150px;
+            left: 0;
+            width: 19%;
+            @media #{$xs} {
+                top: -42px;
+            }
+        }
+    }
+}

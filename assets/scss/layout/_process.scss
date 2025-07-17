@@ -1,0 +1,72 @@
+@use '../utils' as *;
+
+/*=============================
+    16. process
+===============================*/
+.td-process{
+    &-3{
+        &-item{
+            text-align: center;
+            &:hover{
+                & h4{
+                    &::before{
+                        background: var(--td-theme-primary);
+                    }
+                }
+            }
+            & span{
+                font-family: var(--td-ff-body);
+                font-weight: 700;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: var(--td-theme-primary);
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            & h4{
+                font-size: 24px;
+                text-transform: capitalize;
+                padding-bottom: 28px;
+                margin-bottom: 25px;
+                border-bottom: 1px solid #d6d6d6;
+                position: relative;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    bottom: -10px;
+                    left: 0;
+                    border-radius: 30px;
+                    right: 0;
+                    margin: 0 auto;
+                    background: var(--td-common-black);
+                    transition: all .4s ease;
+                }
+            }
+            & p{
+                line-height: 162%;
+                text-transform: capitalize;
+                @media #{$xl,$lg,$md,$sm,$xs} {
+                    & br{
+                        display: none;
+                    }
+                }
+            }
+        }
+        &-shape{
+            position: absolute;
+            left: 0;
+            top: -250px;
+            z-index: -1;
+            width: 29%;
+            &-2{
+                position: absolute;
+                right: 0;
+                bottom: -385px;
+                z-index: -1;
+                width: 29%;  
+            }
+        }
+    }
+}

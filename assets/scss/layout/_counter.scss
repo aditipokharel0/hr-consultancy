@@ -1,0 +1,152 @@
+@use '../utils' as *;
+
+/*=============================
+    06. counter
+===============================*/
+
+.td-counter{
+    &-meet{
+        &-expart{
+            &-wrap{
+                display: flex;
+                justify-content: end;
+                margin-right: 60px;
+                @media #{$sm,$xs} {
+                    margin-right: 0;
+                    flex-direction: column;
+                }
+            }
+        }
+        &-form{
+            width: 526px;
+            background: var(--td-common-black);
+            padding: 54px 50px 50px 50px;
+            margin-bottom: -60px;
+            position: relative;
+            z-index: 1;
+            @media #{$lg,$md,$sm,$xs} {
+                margin-bottom: 0;
+            }
+            @media #{$sm,$xs} {
+                width: 100%;
+            }
+            @media #{$xs} {
+                padding: 44px 20px 40px 20px;
+            }
+            & p{
+                color: var(--td-common-white-2);
+            }
+        }
+        &-title{
+            font-size: 32px;
+            color: var(--td-common-white);
+        }
+        &-input{
+            & label{
+                font-family: var(--td-ff-p);
+                font-weight: 400;
+                font-size: 16px;
+                color: var(--td-common-white-2);
+            }
+            & input, textarea{
+                font-family: var(--td-ff-p);
+                font-weight: 400;
+                font-size: 16px;
+                color: var(--td-common-white-2);
+                background: none;
+                border: none;
+                padding-left: 0;
+                height: 44px;
+                text-transform: capitalize;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                &::placeholder{
+                    color: #7d7d7d;
+                    text-transform: capitalize;
+                }
+            }
+            & textarea{
+                height: 85px;
+                line-height: 1;
+            }
+        }
+    }
+    &-item{
+        display: inline-block;
+        position: relative;
+        padding: 36px 19px;
+        &:hover{
+            & .counter-borders{
+                opacity: 1;
+                visibility: visible;
+                right: 0;
+            }
+            & .projects{
+                color: var(--td-theme-primary);
+            }
+        }
+        & h2{
+            font-weight: 700;
+            font-size: 96px;
+            line-height: .9;
+            text-transform: capitalize;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-color: #D6D6D6;
+            -webkit-text-stroke-width: 1px;
+            margin-bottom: 0;
+        }
+        & .projects{
+            font-family: var(--td-ff-heading);
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: capitalize;
+            color: var(--td-common-black);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            text-align: center;
+            transition: all .3s ease-in-out;
+        }
+        & .counter-borders{
+            position: absolute;
+            top: 0;
+            right: -20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease-in-out;
+        }
+    }
+    &-shape{
+        position: absolute;
+        bottom: -110px;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        @media #{$xxl,$xl,$lg,$md,$sm,$xs} {
+           bottom: -50px; 
+        }
+         @media #{$md,$sm,$xs} {
+            bottom: 0;
+         }
+    }
+    &-inner{
+        @media #{$lg,$md,$sm,$xs} {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+    }
+    &-video{
+        @media #{$md,$sm,$xs} {
+            margin-right: 30px;
+        }
+        @media #{$sm,$xs} {
+            margin-right: 0;
+            padding-bottom: 90px;
+            text-align: center;
+        }
+    }
+}

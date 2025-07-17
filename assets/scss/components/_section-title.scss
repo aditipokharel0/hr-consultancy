@@ -1,0 +1,51 @@
+@use '../utils' as *;
+
+/*=============================
+	11. Section Title
+===============================*/
+.td-section{
+	&-title{
+		@media #{$xl,$lg,$md,$sm,$xs} {
+			font-size: 45px;
+		}
+		@media #{$lg,$md,$sm,$xs} {
+			& br{
+				display: none;
+			}
+		}
+		@media #{$xs} {
+			font-size: 38px;
+		}
+		&-white{
+			color: var(--td-common-white);
+		}
+	}
+	&-subtitle{
+		font-weight: 700;
+		font-size: 16px;
+		color: var(--td-common-black);
+		position: relative;
+		padding-left: 18px;
+		&::before{
+			position: absolute;
+			content: "";
+			width: 8px;
+			height: 8px;
+			border-radius: 20px;
+			background: var(--td-theme-primary);
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+		}
+		&-white{
+			color: var(--td-common-white);
+			&::before{
+				background: var(--td-theme-primary);
+			}
+		}
+	}
+	&-para{
+		line-height: 162%;
+		color: #43435c;
+	}
+}

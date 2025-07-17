@@ -1,0 +1,104 @@
+@use '../utils' as *;
+
+/*=========================
+      03. Breadcrumb
+===========================*/
+
+.td-breadcrumb{
+      &-title{
+            font-size: 96px;
+            line-height: 110%;
+            color: var(--td-common-white);
+            @media #{$md,$sm,$xs} {
+                  font-size: 70px;
+            }
+            @media #{$xs} {
+                  font-size: 40px;
+            }
+      }
+      &-list{
+            & ul{
+                  display: flex;
+                  gap: 15px;
+                  justify-content: center;
+                  & li{
+                        font-family: var(--td-ff-heading);
+                        font-weight: 700;
+                        font-size: 24px;
+                        text-transform: capitalize;
+                        color: var(--td-common-white);
+                        @media #{$xs} {
+                              font-size: 18px;
+                        }
+                        & a{
+                              &:hover{
+                                    color: var(--td-theme-primary);
+                              }
+                        }
+                        &.pages{
+                              color: var(--td-common-white-2);
+                        }
+                  }
+            }
+      }
+      &-bigtext{
+            font-weight: 700;
+            font-size: 300px;
+            line-height: 0.7;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-color: #FFFAFA;
+            opacity: 0.1;
+            -webkit-text-stroke-width: 2px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            text-align: center;
+            z-index: -1;
+            @media #{$xl,$lg} {
+                 font-size: 200px;
+            }
+            @media #{$md} {
+                 font-size: 150px;
+            }
+            @media #{$sm,$xs} {
+                 font-size: 110px;
+            }
+            @media #{$xs} {
+                  font-size: 70px;
+            }
+      }
+      &-para{
+            font-size: 24px;
+            line-height: 142%;
+            text-transform: capitalize;
+            color: var(--td-common-white-2);
+            margin-bottom: 22px;
+            @media #{$md,$sm,$xs} {
+                 font-size: 20px;
+            }
+            @media #{$sm,$xs} {
+                  & br{
+                        display: none;
+                  }
+            }
+            @media #{$xs} {
+                  font-size: 18px;
+            }
+      }
+      &-spacing{
+            padding-top: 120px;
+            padding-bottom: 120px;
+            @media #{$xs} {
+                  padding-top: 80px;
+                  padding-bottom: 80px;
+            }
+      }
+}

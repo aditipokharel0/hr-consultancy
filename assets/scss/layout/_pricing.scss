@@ -1,0 +1,174 @@
+@use '../utils' as *;
+
+/*=============================
+    15. pricing
+===============================*/
+.td-pricing{
+    &-item{
+        padding: 50px 50px 50px 50px;
+        @media #{$xs} {
+            padding: 30px 30px 30px 30px;
+        }
+        &.td-red{
+            background: var(--td-theme-primary);
+        }
+        &.td-gray{
+            background: #f8f8f8;
+            & .td-pricing-header-subtitle {
+                color: var(--td-common-black);
+            }
+            & .td-pricing-header-title {
+                color: var(--td-common-black);
+            }
+            & .td-pricing-tag {
+                color: var(--td-common-white);
+                background: var(--td-theme-primary);
+            }
+            & .td-pricing-list ul li {
+                color: var(--td-common-black);
+                &::before{
+                    background: var(--td-common-black);
+                }
+            }
+        }
+    }
+    &-header{
+        &-subtitle{
+            font-size: 24px;
+            text-transform: capitalize;
+            color: var(--td-common-white);
+        }
+        &-title{
+            font-size: 65px;
+            text-transform: capitalize;
+            color: var(--td-common-white);
+            & span{
+                font-size: 16px;
+            }
+        }
+    }
+    &-tag{
+        font-family: var(--td-ff-heading);
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: capitalize;
+        color: var(--td-common-black);
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+        background: var(--td-common-white);
+        display: block;
+        padding: 10px 20px;
+    }
+    &-list{
+        & ul{
+            & li{
+                font-weight: 500;
+                font-size: 16px;
+                text-transform: capitalize;
+                color: #fffafa;
+                padding-left: 30px;
+                position: relative;
+                margin-bottom: 15px;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width: 12px;
+                    height: 1px;
+                    background: var(--td-common-white);
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    &-btn{
+        & a{
+            text-transform: uppercase;
+        }
+    }
+    &-btn-bg{
+        background: #f8f8f8;
+        border-radius: 50px;
+        position: relative;
+        @media #{$xs}{
+            transform: translateY(40px);
+        } 
+        & button{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 14px;
+            color: #222;
+            position: relative;
+            z-index: 999;
+            padding: 18px 30px;
+            transition: .3s;
+            &:hover{
+                color: var(--td-common-black);
+            }
+            &.active{
+                color: var(--td-common-white);
+            }
+            &.monthly.active{
+                & ~ .test{
+                    transform: translateX(0px);
+                }
+            }
+            &.yearly.active{
+                transform: translateX(-5px);
+            }
+        }
+        @at-root{
+            .test{
+                position: absolute;
+                transition: transform .2s ease-in-out;
+                will-change: transform;
+                width: 100px;
+                height: calc(100% - 8px);
+                position: absolute;
+                left: 5px;
+                top: 4px;
+                display: block;
+                content: "";
+                background: var(--td-theme-primary);
+                border-radius: 30px;
+                transform: translateX(104px);
+            }
+        }
+    }
+    &-shape{
+        margin-left: 155px;
+        display: inline-block;
+        @media #{$xl,$lg,$md,$sm,$xs} {
+            margin-bottom: 70px;
+        }
+        @media #{$xs} {
+            margin-left: 50px;
+            margin-bottom: 40px;
+        }
+    }
+    &-save{
+        font-weight: 500;
+        font-size: 16px;
+        color: #6f6f6f;
+        display: block;
+        & span{
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--td-theme-primary);
+        }
+    }
+    &-inner{
+        box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.05);
+        background: var(--td-common-white);
+    }
+    &-track{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        width: 15%;
+        @media #{$xl,$lg,$md,$sm,$xs} {
+            top: -94px;
+        }
+    }
+}
